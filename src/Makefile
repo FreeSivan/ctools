@@ -3,7 +3,7 @@ CC = gcc
 
 BIN_PATH = ../bin
 
-all : moveFilter movenFilter findLine
+all : moveFilter movenFilter findLine moveNumFile
 
 moveFilter : moveFilter.o
 	${CC} $^ -o ${BIN_PATH}/$@
@@ -14,6 +14,10 @@ movenFilter : movenFilter.o
 	@rm $^
 
 findLine : findLine.o
+	${CXX} $^ -o ${BIN_PATH}/$@
+	@rm $^
+
+moveNumFile : moveNumFile.o
 	${CXX} $^ -o ${BIN_PATH}/$@
 	@rm $^
 
