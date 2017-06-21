@@ -18,8 +18,8 @@ int moveFilter(char *org, char *flt, char *dst) {
     while (fgets(line, MAX_LINE_LEN, filter)) {
         int n = strlen(line);
         line[n-1] = 0;        
-        sprintf(orgName, "%s/%s%s", org, line, ".afp");
-        sprintf(dstName, "%s/%s%s", dst, line, ".afp");
+        sprintf(orgName, "%s/%s", org, line);
+        sprintf(dstName, "%s/%s", dst, line);
         printf ("org = %s | dst = %s\n", orgName, dstName);
         rename(orgName, dstName);
     }
